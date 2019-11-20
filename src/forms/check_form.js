@@ -1,53 +1,68 @@
 import React, { Component } from 'react';
 
 class CheckForm extends Component {
-  /*  constructor(props) {
-        super(props);
+    constructor() {
+        super();
         this.state = {
-            zsk_id: 0,
-            check_in_or_out: 'check_in',
-            time: new Date().getTime()
-        };
-
-        this.handleInputChange.bind(this);
+            formControls: {
+                email: {
+                    value: ''
+                },
+                name: {
+                    value: ''
+                },
+                password: {
+                    value: ''
+                }
+            }
+        }
     }
-
-    handleInputChange(event) {
-        const target = event.target;
-        const value = target.type === "checkbox" ? target.checked : target.value;
-        const name = target.name;
-
+    changeHandler = event => {
+        const name = event.target.name;
+        const value = event.target.value;
         this.setState({
-            {name}: value
+            formControls: {
+                ...this.state.formControls,
+                [name]: {
+                    ...this.state.formControls[name],
+                    value
+                }
+            }
         });
     }
-
-    handleOptionChange(event) {
-        this.setState({
-            check_in_or_out: event.target.value,
-            zsk_id: event.target.value
-        });
-    };
-
-    handleSubmit(event) {
-        console.log("You have submitted:", this.state.check_in_or_out, ", ID=", this.state.zsk_id);
-};
-    */
-    render () {
+    submitFormHandler = event => {
+        event.preventDefault();
+        console.log(this.state.formControls.email.value)
+    }
+    render() {
         return (
-           <form name="get_list" method="POST" encType="multipart/form-data" onSubmit={this.handleSubmit}>
-                <input type="radio" className="check_in" name="check_in_or_out" value="ckeck_in" checked={this.state.check_in_or_out} onChange={this.handleOptionChange}/>
-                <label htmlFor="check_in">Zameldowanie</label> <br/>
-
-                <input type="radio" className="check_out" name="check_in_or_out" value="check_out" checked={this.state.check_in_or_out} onChange={this.handleOptionChange}/>
-                <label htmlFor="check_out">Wymeldowanie</label><br/>
-
-                <label htmlFor="zsk_id"> Wprowadź ID ucznia </label>
-                <input type="text" name="zsk_id" onChange={this.handleOptionChange}/>
-                <input type="submit" value="OK" onSubmit={this.handleSubmit}/>
+            <form onSubmit={this.submitFormHandler}>
+                <label htmlFor="email">email</label>
+                <input type="email"
+                    name="email"
+                    value={this.state.formControls.email.value}
+                    onChange={this.changeHandler}
+                />
+                <br />
+                <label htmlFor='name'>name</label>
+                <input type="text"
+                    name="name"
+                    value={this.state.formControls.name.value}
+                    onChange={this.changeHandler}
+                />
+                <br />
+                <label htmlFor="password">password</label>
+                <input type="password"
+                    name="password"
+                    value={this.state.formControls.password.value}
+                    onChange={this.changeHandler}
+                />
+                <br />
+                <input type="submit" />
             </form>
         );
     }
+
 }
 
 export default CheckForm;
