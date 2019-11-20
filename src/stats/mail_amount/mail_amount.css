@@ -1,0 +1,22 @@
+.amount {
+    width: 100vw;
+    height: 100vh;
+    background: yellow;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+}
+.info {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.amount h1 {
+    font-size: 30vw;
+    line-height: 1;
+}
+
+.amount h2{
+    font-size: 6vw;
+}

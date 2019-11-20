@@ -1,26 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter, Route } from 'react-router-dom';
+import Stats from './stats/stats';
+import CheckForm from './forms/check_form';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    return (
+      <BrowserRouter>
+        <Route path="/stats" exact component={Stats} />
+      <Route path="/forms" exact component={CheckForm} />
+    </BrowserRouter>
+    );
 }
 
 export default App;

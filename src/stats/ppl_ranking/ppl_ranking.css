@@ -1,0 +1,43 @@
+.person > .bar {
+    color: #fff;
+    text-align: center;
+    position: relative;
+    transition: all 0.1s ease;
+}
+.person > .bar > p {
+    height: 100%;
+    font-size: 4vh;
+    width: 100%;
+    position: absolute;
+    transition: all 0.5s ease;
+}
+.ranking {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(255, 255, 0);
+}
+.ranking h1{
+    text-align: center;
+    padding-top: 5vh;
+    padding-bottom: 3vh;
+    text-transform: uppercase;
+    font-size: 5vh;
+    letter-spacing: 0.1vw;
+
+}
+.person {
+    margin: 1vw;
+    position: relative;
+    display: inline-block;
+    vertical-align: bottom;
+} 
+.person > p {
+    position: absolute;
+    text-align: center;
+    width: 9vw;
+    text-transform: uppercase;
+    top: 100%;
+    transform: translate(-0.5vw, 1vw);
+    font-size: 1.1vw;
+}

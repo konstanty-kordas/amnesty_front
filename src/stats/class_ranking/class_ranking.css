@@ -1,0 +1,43 @@
+.classranking {
+    width: 100vw;
+    height: 100vh;
+    background: yellow;
+    position: relative;
+}
+
+.classranking > h1{
+    text-align: center;
+    font-size: 6vh;
+    text-transform: uppercase;
+    padding-top: 5vh;
+    padding-bottom: 3vh;
+    letter-spacing: 0.1vw;
+}
+.schoolclass {
+    position: relative;
+}
+.schoolclass > .bar {
+    position: relative;
+    margin-left: 10vw;
+    margin-bottom: 2vw;
+}
+.schoolclass > .bar p {
+    width: 100%;
+    position: absolute;
+    text-align: right;
+    top: 50%;
+    right: -3vw;
+    font-weight: bold;
+    transform: translate(0, -50%);
+    font-size: 4vh;
+}
+
+.schoolclass > p {
+    width: 10vw;
+    text-align: center;
+    top: 50%;
+    font-size: 5vh;
+    font-weight: bold;
+    position: absolute;
+    transform: translate(0, -50%);
+}
