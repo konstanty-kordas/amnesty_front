@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from 'react';
 
 class CheckForm extends Component {
     constructor() {
@@ -26,21 +26,27 @@ class CheckForm extends Component {
     changeHandler = event => {
         const name = event.target.name;
         const value = event.target.value;
-        this.setState({
+        this.setState(prevState => ({
             formControls: {
-                ...this.state.formControls,
+                ...prevState.formControls,
                 [name]: {
-                    ...this.state.formControls[name],
+                    ...prevState.formControls[name],
                     value
                 }
             }
-        });
+        }));
     };
     changeRadioHandler = event => {
         const change = event.target.id;
-        this.setState({
-            ...(this.state.formControls.attendance.value = change)
-        });
+        this.setState(prevState => ({
+            formControls: {
+                ...prevState.formControls,
+                attendance: {
+                    ...prevState.formControls.attendance,
+                    value: change,
+                }
+            }
+        }));
     };
     submitFormHandler = event => {
         event.preventDefault();
@@ -62,8 +68,8 @@ class CheckForm extends Component {
                     }
                     onChange={
                         this.changeHandler
-                    }/>
-                <br/>
+                    } />
+                <br />
                 <label htmlFor="surname">Nazwisko</label>
                 <input type="text" name="surname"
                     value={
@@ -71,8 +77,8 @@ class CheckForm extends Component {
                     }
                     onChange={
                         this.changeHandler
-                    }/>
-                <br/>
+                    } />
+                <br />
                 <label htmlFor="id">ID</label>
                 <input type="text" id="id" name="id"
                     value={
@@ -80,8 +86,8 @@ class CheckForm extends Component {
                     }
                     onChange={
                         this.changeHandler
-                    }/>
-                <br/>
+                    } />
+                <br />
                 <p>TO BĘDZIE GDZIEŚ INDZIEJ</p>
                 <label htmlFor="id_checkout">ID</label>
                 <input type="text" name="id_checkout" id="id_checkout"
@@ -90,7 +96,7 @@ class CheckForm extends Component {
                     }
                     onChange={
                         this.changeHandler
-                }></input>
+                    }></input>
                 <label htmlFor="check_in">Wejście</label>
                 <input type="radio" id="check_in" name="attendance"
                     value={
@@ -98,7 +104,7 @@ class CheckForm extends Component {
                     }
                     onChange={
                         this.changeRadioHandler
-                    }/>
+                    } />
                 <label htmlFor="check_out">Wyjście</label>
                 <input type="radio" id="check_out" name="attendance"
                     value={
@@ -106,9 +112,9 @@ class CheckForm extends Component {
                     }
                     onChange={
                         this.changeRadioHandler
-                    }/>
-                <br/>
-                <input type="submit"/>
+                    } />
+                <br />
+                <input type="submit" />
             </form>
         );
     }

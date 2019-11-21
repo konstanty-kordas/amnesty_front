@@ -1,0 +1,12 @@
+li {
+    list-style-type: none;
+}
+li > span{
+    color: #fff;
+    text-align: left;
+    display: inline-block;
+    padding-inline: 1vw;
+    width: 10vw;
+    background-color: green;
+    border: 5px dashed tomato;
+}
