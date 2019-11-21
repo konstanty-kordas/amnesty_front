@@ -29,6 +29,7 @@ class CheckForm extends Component {
         });
     };
 
+    aas
     handleSubmit(event) {
         console.log("You have submitted:", this.state.check_in_or_out, ", ID=", this.state.zsk_id);
 };
